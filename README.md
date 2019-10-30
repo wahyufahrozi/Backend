@@ -1,6 +1,6 @@
 # 📚Books Library API
 
-A Collection Of Novels API Using NodeJS MySQL ExpressJS
+A Collection Of Books API Using NodeJS MySQL ExpressJS
 
 <p align="center">
   <a href="https://nodejs.org/">
@@ -29,7 +29,7 @@ A Collection Of Novels API Using NodeJS MySQL ExpressJS
 
 ## Table Of Contents
 
-- [Books Library Api](#novel-library-api)
+- [Books Library Api](#books-library-api)
   - [Table Of Content](#table-of-content)
   - [Build Setup](#build-setup)
   - [Stacks](#stacks)
@@ -98,14 +98,14 @@ $ npm run server
 
 ## API Docs
 
-### **Novel**
+### **Books**
 
 | Method | Endpoint                     | Description      | Request Param    | Request Body                                                                                                                 | Request Query                                                    |
 | ------ | ---------------------------- | ---------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| GET    | /api/library                 | Get Novels       | -                | -                                                                                                                            | `title`:STRING `author`:STRING `genre`: INTEGER `status`:INTEGER |
+| GET    | /api/library                 | Get Books        | -                | -                                                                                                                            | `title`:STRING `author`:STRING `genre`: INTEGER `status`:INTEGER |
 | POST   | /api/library                 | Add New Books    | -                | `title`:STRING (Required) `author`:STRING (Required)`status`:STRING (Required) `genre`:STRING (Required)                     | -                                                                |
 | PUT    | api/library/edit/:id_books   | Edit Books By ID | `id`: INT (UUID) | `title`:STRING (Required) `author`:STRING (Required) `image_url`:STRING `status`:STRING (Required) `genre`:STRING (Required) | -                                                                |
-| DELETE | api/library/delete/:id_books | Delete Novel     | -                | `id`:INT                                                                                                                     | -                                                                |
+| DELETE | api/library/delete/:id_books | Delete Books     | -                | `id`:INT                                                                                                                     | -                                                                |
 
 ### **Genre**
 
