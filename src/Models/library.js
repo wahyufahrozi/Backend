@@ -1,4 +1,4 @@
-const conn = require("../Config/db");
+const conn = require("../Config/db"); //<- disamokan dengan (variabel).query
 
 module.exports = {
   getallBooks: () => {

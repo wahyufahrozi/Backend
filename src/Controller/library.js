@@ -1,13 +1,14 @@
 const booksmodel = require("../Models/library");
 
 module.exports = {
-  //ambil semua data dari database
+  //ambil semua data buku dari database
   getallBooks: (req, res) => {
     booksmodel
       .getallBooks()
       .then(response => res.json(response))
       .catch(err => res.json(err));
   },
+  //ambil semua data genre dari database
   getallGenre: (req, res) => {
     booksmodel
       .getallGenre()
@@ -21,7 +22,7 @@ module.exports = {
       .then(response => res.json(response))
       .catch(err => res.json(err));
   },
-  //insert data ke database
+  //insert data buku ke database
   postBooks: (req, res) => {
     const body = {
       ...req.body
@@ -36,6 +37,7 @@ module.exports = {
       )
       .catch(err => console.log(err));
   },
+  //insert data genre ke database
   postGenre: (req, res) => {
     const body = {
       ...req.body

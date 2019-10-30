@@ -100,12 +100,12 @@ $ npm run server
 
 ### **Books**
 
-| Method | Endpoint                     | Description      | Request Param    | Request Body                                                                                                                 | Request Query                                                    |
-| ------ | ---------------------------- | ---------------- | ---------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
-| GET    | /api/library                 | Get Books        | -                | -                                                                                                                            | `title`:STRING `author`:STRING `genre`: INTEGER `status`:INTEGER |
-| POST   | /api/library                 | Add New Books    | -                | `title`:STRING (Required) `author`:STRING (Required)`status`:STRING (Required) `genre`:STRING (Required)                     | -                                                                |
-| PUT    | api/library/edit/:id_books   | Edit Books By ID | `id`: INT (UUID) | `title`:STRING (Required) `author`:STRING (Required) `image_url`:STRING `status`:STRING (Required) `genre`:STRING (Required) | -                                                                |
-| DELETE | api/library/delete/:id_books | Delete Books     | -                | `id`:INT                                                                                                                     | -                                                                |
+| Method | Endpoint                     | Description      | Request Param    | Request Body                                                                                              | Request Query                                                    |
+| ------ | ---------------------------- | ---------------- | ---------------- | --------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------- |
+| GET    | /api/library                 | Get Books        | -                | -                                                                                                         | `title`:STRING `author`:STRING `genre`: INTEGER `status`:INTEGER |
+| POST   | /api/library                 | Add New Books    | -                | `title`:STRING (Required) `author`:STRING (Required)`status`:STRING (Required) `genre`:STRING (Required)  | -                                                                |
+| PUT    | api/library/edit/:id_books   | Edit Books By ID | `id`: INT (UUID) | `title`:STRING (Required) `author`:STRING (Required) `status`:STRING (Required) `genre`:STRING (Required) | -                                                                |
+| DELETE | api/library/delete/:id_books | Delete Books     | -                | `id`:INT                                                                                                  | -                                                                |
 
 ### **Genre**
 
