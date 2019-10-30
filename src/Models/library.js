@@ -36,6 +36,17 @@ module.exports = {
       });
     });
   },
+  postGenre: body => {
+    return new Promise((resolve, reject) => {
+      conn.query("INSERT INTO genre SET?", [body], (err, result) => {
+        if (!err) {
+          resolve(result);
+        } else {
+          reject(err);
+        }
+      });
+    });
+  },
   getBygenre: req => {
     return new Promise((resolve, reject) => {
       let sql =

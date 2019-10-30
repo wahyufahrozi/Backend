@@ -30,6 +30,20 @@ module.exports = {
       )
       .catch(err => console.log(err));
   },
+  postGenre: (req, res) => {
+    const body = {
+      ...req.body
+    };
+    booksmodel
+      .postGenre(body)
+      .then(response =>
+        res.json({
+          status: 200,
+          result: body
+        })
+      )
+      .catch(err => console.log(err));
+  },
   //ambil data genre dari database
   getBygenre: (req, res) => {
     booksmodel
