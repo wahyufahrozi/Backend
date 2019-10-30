@@ -13,6 +13,18 @@ module.exports = {
       });
     });
   },
+  getallGenre: () => {
+    return new Promise((resolve, reject) => {
+      let sql = "SELECT * FROM genre";
+      conn.query(sql, (err, results) => {
+        if (!err) {
+          resolve(results);
+        } else {
+          reject(err);
+        }
+      });
+    });
+  },
   getBooksbyId: req => {
     return new Promise((resolve, reject) => {
       let sql = "SELECT * FROM books WHERE id_books=" + req.params.id_books;

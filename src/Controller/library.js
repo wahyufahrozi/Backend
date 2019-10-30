@@ -8,6 +8,12 @@ module.exports = {
       .then(response => res.json(response))
       .catch(err => res.json(err));
   },
+  getallGenre: (req, res) => {
+    booksmodel
+      .getallGenre()
+      .then(response => res.json(response))
+      .catch(err => res.json(err));
+  },
   //ambil data buku dari database berdasarkan ID
   getBooksbyId: (req, res) => {
     booksmodel

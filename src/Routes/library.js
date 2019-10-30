@@ -4,6 +4,7 @@ const librarycontroller = require("../Controller/library");
 
 /* GET users listing. */
 router.get("/", librarycontroller.getallBooks);
+router.get("/genre", librarycontroller.getallGenre);
 router.get("/:id_books", librarycontroller.getBooksbyId);
 router.get("/genre/:id_genre", librarycontroller.getBygenre);
 router.get("/status/:id_status", librarycontroller.getBystatus);
