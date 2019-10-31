@@ -1,14 +1,14 @@
 const booksmodel = require("../Models/library");
 
 module.exports = {
-  //ambil semua data buku dari database
+  //mengambil semua data buku dari database
   getallBooks: (req, res) => {
     booksmodel
       .getallBooks()
       .then(response => res.json(response))
       .catch(err => res.json(err));
   },
-  //ambil semua data genre dari database
+  //mengambil semua data genre dari database
   getallGenre: (req, res) => {
     booksmodel
       .getallGenre()
@@ -54,15 +54,17 @@ module.exports = {
   },
   //ambil data genre dari database
   getBygenre: (req, res) => {
+    const genre = req.params.genre;
     booksmodel
-      .getBygenre(req)
+      .getBygenre(genre)
       .then(response => res.json(response))
       .catch(err => res.json(err));
   },
   //ambil data status dari database
   getBystatus: (req, res) => {
+    const status = req.params.status;
     booksmodel
-      .getBystatus(req)
+      .getBystatus(status)
       .then(response => res.json(response))
       .catch(err => res.json(err));
   },

@@ -1,4 +1,4 @@
-const conn = require("../Config/db"); //<- disamokan dengan (variabel).query
+const conn = require("../Config/db"); //<- disamakan dengan (variabel).query
 
 module.exports = {
   getallBooks: () => {
@@ -59,12 +59,11 @@ module.exports = {
       });
     });
   },
-  getBygenre: req => {
+  getBygenre: genre => {
     return new Promise((resolve, reject) => {
       let sql =
-        "SELECT a.title,a.author,c.status,b.genre AS genre FROM books a INNER JOIN status c ON a.id_status=c.id_status INNER JOIN genre b ON a.id_genre=b.id_genre WHERE b.id_genre=" +
-        req.params.id_genre;
-      let query = conn.query(sql, (err, results) => {
+        "SELECT a.title,a.author,c.status,b.genre AS genre FROM books a INNER JOIN status c ON a.id_status=c.id_status INNER JOIN genre b ON a.id_genre=b.id_genre WHERE b.genre=?";
+      let query = conn.query(sql, [genre], (err, results) => {
         if (!err) {
           resolve(results);
         } else {
@@ -73,12 +72,11 @@ module.exports = {
       });
     });
   },
-  getBystatus: req => {
+  getBystatus: status => {
     return new Promise((resolve, reject) => {
       let sql =
-        "SELECT a.title,a.author,b.genre,c.status AS status FROM books a INNER JOIN genre b ON a.id_genre=b.id_genre INNER JOIN status c ON a.id_status=c.id_status WHERE c.id_status=" +
-        req.params.id_status;
-      let query = conn.query(sql, (err, results) => {
+        "SELECT a.title,a.author,b.genre,c.status AS status FROM books a INNER JOIN genre b ON a.id_genre=b.id_genre INNER JOIN status c ON a.id_status=c.id_status WHERE c.status=?";
+      let query = conn.query(sql, [status], (err, results) => {
         if (!err) {
           resolve(results);
         } else {
